@@ -40,6 +40,12 @@
             <version>${mybatis-version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.0.11</version>
+        </dependency>
+
     </dependencies>
 
     <!--maven的插件-->
