@@ -1,2 +1,2 @@
 # e_shop
-a  sample project of springboot
+a  sample of springboot
