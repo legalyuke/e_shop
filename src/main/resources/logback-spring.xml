@@ -5,8 +5,8 @@
     <springProfile name="prod">
         <property name="prodLogPath" value="/opt/app/logs/e_shop-log"/>
     </springProfile>
-    <springProfile name="test">
-        <property name="testLogPath" value="/opt/app/logs/e_shop-log"/>
+    <springProfile name="dev">
+        <property name="devLogPath" value="/opt/app/logs/e_shop-log"/>
     </springProfile>
     <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
     <property name="logTextPattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS}---> [%thread] %-5level %logger{50} - %msg%n"/>
@@ -31,9 +31,9 @@
         </layout>
     </appender>
 
-    <appender name="testAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <appender name="devAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>${testLogPath}/e_shop-log.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
+            <FileNamePattern>${devLogPath}/e_shop-log.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
             <MaxHistory>30</MaxHistory>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>10MB</maxFileSize>
@@ -53,11 +53,6 @@
     <springProfile name="dev">
         <root level="INFO">
             <appender-ref ref="devAppender"/>
-        </root>
-    </springProfile>
-    <springProfile name="test">
-        <root level="INFO">
-            <appender-ref ref="testAppender"/>
         </root>
     </springProfile>
 </configuration>
