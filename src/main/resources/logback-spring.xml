@@ -50,7 +50,7 @@
             <appender-ref ref="prodAppender"/>
         </root>
     </springProfile>
-    <springProfile name="dev">
+    <springProfile name="test">
         <root level="INFO">
             <appender-ref ref="devAppender"/>
         </root>
