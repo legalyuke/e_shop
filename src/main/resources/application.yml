@@ -3,6 +3,7 @@ server:
 spring:
   profiles:
     active: dev
+
 mybatis:
   # spring boot集成mybatis的方式打印sql
   mapper-locations: classpath:mapper/*.xml

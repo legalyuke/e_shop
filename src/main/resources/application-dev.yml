@@ -22,3 +22,10 @@ spring:
     testOnReturn: false
     poolPreparedStatements: true
     maxOpenPreparedStatements: 20
+  data:
+    mongodb:
+      uri: localhost
+      port: 27017
+      database: test
+      username: admin
+      password:
